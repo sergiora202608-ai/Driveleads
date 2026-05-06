@@ -879,66 +879,66 @@ body {
 /* Sticky CTA */
 .sticky-cta {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(11, 11, 11, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(229, 9, 20, 0.3);
-    z-index: 100;
-    padding: 1rem 5%;
-    transform: translateY(100%);
-    animation: slideUpSticky 0.5s ease forwards 1s;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+    z-index: 1000;
+    animation: slideUpStickyBtn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1s;
+    width: auto;
+    pointer-events: none;
 }
 
-@keyframes slideUpSticky {
-    to { transform: translateY(0); }
+.sticky-red {
+    background-color: transparent;
 }
 
-.sticky-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+.sticky-full-btn {
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
+    gap: 0.8rem;
+    background-color: var(--accent-color);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.sticky-full-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(229, 9, 20, 0.6);
 }
 
 .sticky-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
 }
 
-.sticky-btn {
-    background-color: var(--accent-color);
-    color: #fff;
-    text-decoration: none;
-    padding: 0.8rem 2rem;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+.wa-icon {
+    width: 28px;
+    height: 28px;
 }
 
-.sticky-btn:hover {
-    background-color: var(--accent-hover);
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+@keyframes slideUpStickyBtn {
+    to { transform: translateX(-50%) translateY(0); }
 }
 
 @media (max-width: 768px) {
-    .sticky-container {
-        flex-direction: column;
-        gap: 0.8rem;
+    .sticky-full-btn {
+        padding: 0.8rem 2rem;
     }
     .sticky-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
-    .sticky-btn {
-        width: 100%;
-        text-align: center;
+    .wa-icon {
+        width: 24px;
+        height: 24px;
     }
 }
 
